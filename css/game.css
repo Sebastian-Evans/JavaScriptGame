@@ -1,0 +1,70 @@
+/* CSS Document
+   Sebastian Evans
+*/
+
+html, body, .directions {
+	color: #242424;
+	margin: 0 auto;
+	font-family: "Libre Baskerville", serif;
+	font-size: 12px;
+	background-image: url('../img/horizon.png');
+	background-position: center top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	 }
+	
+h1 {
+	margin: 2px;
+	font-family: "Libre Baskerville", serif;
+}
+	
+button {
+	font-family: "Libre Baskerville", serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 8px; }
+	
+div#content {
+    width: 700px;
+    margin:0 auto;
+	padding: 20px;
+	border: 1px solid #ccc ;
+}
+	
+div#controls {
+	text-align: right; }
+	
+	
+div#controls button {
+	margin-left: 20px; }
+	
+
+	
+div#gamespace {
+	margin: 20px auto;
+	padding: 10px;
+	height: 350px;
+	width: 80%;	
+	background-color: #000000;
+	border: 2px solid #CCC;
+	background-image: url('../img/field.png'); 
+	background-size: contain;  
+	background-position: center; 
+	background-repeat: no-repeat; 
+	position: relative;
+	
+ }
+
+.soccerBall {
+	width: 35px;
+	position: absolute;
+	margin: 0;
+}
+#welcome{
+	font-size: 20px;
+}
+.libre-baskerville-regular {
+	font-family: "Libre Baskerville", serif;
+	font-weight: 400;
+	font-style: normal;
+  }
