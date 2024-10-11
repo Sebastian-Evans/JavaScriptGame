@@ -15,7 +15,7 @@ let userScore = 0;
 
 function increaseScore(){
     userScore++;
-    $("#score").text(userScore);
+    $("#score").text(`${userScore} points`);
 }
 
 window.addEventListener('load', (event) =>{
@@ -42,12 +42,15 @@ window.addEventListener('load', (event) =>{
         "font-size" : "22px",
         "background-color": "#7cfc00"
     });
-    });
+
+    increaseScore();
+
+});
 
     $(document).ready(function(){
         $("#gamespace").prepend($("<img>",{src:"img/soccerBall.png", alt:"picture of a soccer ball", class:"soccerBall"}));
 
-        increaseScore();
+        
        
         });
         
