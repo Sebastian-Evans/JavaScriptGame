@@ -6,7 +6,7 @@ html, body, .directions {
 	color: #242424;
 	margin: 0 auto;
 	font-family: "Libre Baskerville", serif;
-	font-size: 12px;
+	font-size: 16px;
 	background-image: url('../img/horizon.png');
 	background-position: center top;
 	background-size: cover;
@@ -15,8 +15,10 @@ html, body, .directions {
 	
 h1 {
 	margin: 2px;
-	font-family: "Libre Baskerville", serif;
+	font-size: 36px;
+	font-family: "Rock Salt", cursive;
 }
+
 	
 button {
 	font-family: "Libre Baskerville", serif;
@@ -29,6 +31,7 @@ div#content {
     margin:0 auto;
 	padding: 20px;
 	border: 1px solid #ccc ;
+	background-color: rgba(255,255,255,.6);
 }
 	
 div#controls {
