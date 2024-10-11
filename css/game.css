@@ -37,8 +37,11 @@ div#content {
 div#controls {
 	text-align: right; }
 	
-	
-div#controls button {
+div#timer {
+	text-align: left;
+}
+
+div#controls button, #timer {
 	margin-left: 20px; }
 	
 
