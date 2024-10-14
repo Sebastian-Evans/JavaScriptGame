@@ -9,7 +9,7 @@ let randomY = Math.floor(Math.random() * gamespaceHeight);
 
 alert(`The random x location is ${randomX}`);
 
-alert(`The random x location is ${randomY}`);
+alert(`The random y location is ${randomY}`);
 
 let userScore = 0;
 
