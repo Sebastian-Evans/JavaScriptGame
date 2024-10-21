@@ -2,14 +2,13 @@ const gamespaceWidth = $("#gamespace").width();
     
 const gamespaceHeight = $("#gamespace").height();
 
+function randomX(){
+return Math.floor(Math.random() * gamespaceWidth);
+}
 
-let randomX = Math.floor(Math.random() * gamespaceWidth);
-
-let randomY = Math.floor(Math.random() * gamespaceHeight);
-
-alert(`The random x location is ${randomX}`);
-
-alert(`The random y location is ${randomY}`);
+function randonY(){
+return Math.floor(Math.random() * gamespaceHeight);
+}
 
 let userScore = 0;
 
@@ -50,7 +49,8 @@ window.addEventListener('load', (event) =>{
     $(document).ready(function(){
         $("#gamespace").prepend($("<img>",{src:"img/soccerBall.png", alt:"picture of a soccer ball", class:"soccerBall"}));
 
-        
+        alert(randomX());
+        alert(randonY());
        
         });
         

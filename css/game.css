@@ -16,15 +16,11 @@ html, body, .directions {
 h1 {
 	margin: 2px;
 	font-size: 36px;
+	color: #65ca00;
+	text-shadow: 2px 2px #000;
 	font-family: "Rock Salt", cursive;
 }
 
-	
-button {
-	font-family: "Libre Baskerville", serif;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 8px; }
 	
 div#content {
     width: 700px;
@@ -35,16 +31,37 @@ div#content {
 }
 	
 div#controls {
-	text-align: right; }
-	
-div#timer {
+	display: flex;
+}	
+#score{
+	text-align: right;
+	flex:4;
+	color: #65ca00;
+	text-shadow: 1px 1px #000;
+	font-family: "Rock Salt", cursive;
+	padding-top: 5px;
+}
+#timer {
 	text-align: left;
+	flex: 4;
+	color: #65ca00;
+	text-shadow: 1px 1px #000;
+	font-family: "Rock Salt", cursive;
+	padding-top: 5px;
+}
+
+button {
+	font-family: "Libre Baskerville", serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 8px; 
+	flex: 1;
+
 }
 
 div#controls button, #timer {
 	margin-left: 20px; }
 	
-
 	
 div#gamespace {
 	margin: 20px auto;
