@@ -22,6 +22,11 @@ function decreaseTime(){
  $("#timer").text(`${timerCountdown} remaining`);
 }
 
+function addImage(){
+
+    $("#gamespace").prepend($("<img>",{src:"img/soccerBall.png", alt:"picture of a soccer ball", class:"soccerBall"}));
+}
+
 function startGame(){
 
     alert(randomX());
@@ -32,8 +37,9 @@ function startGame(){
 //    $("#timer").text(`${timerCountdown} remaining`);
 
     increaseScore();
-    $("#gamespace").prepend($("<img>",{src:"img/soccerBall.png", alt:"picture of a soccer ball", class:"soccerBall"}));
+    // $("#gamespace").prepend($("<img>",{src:"img/soccerBall.png", alt:"picture of a soccer ball", class:"soccerBall"}));
 
+    addImage();
     decreaseTime();
 
 }
