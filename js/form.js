@@ -1,67 +1,67 @@
-const gamespaceWidth = $("#gamespace").width();
+        const gamespaceWidth = $("#gamespace").width();          
+        const gamespaceHeight = $("#gamespace").height();
+        let userScore = 0;
+        let timerCountdown = 30;
+
+        function randomX(){
+
+        
+        return Math.floor(Math.random() * gamespaceWidth);
+    }
+
+        function randonY(){
     
-const gamespaceHeight = $("#gamespace").height();
+            return Math.floor(Math.random() * gamespaceHeight);
+        }
 
-function randomX(){
-return Math.floor(Math.random() * gamespaceWidth);
-}
+        
 
-function randonY(){
-return Math.floor(Math.random() * gamespaceHeight);
-}
+        function increaseScore(){
+            userScore++;
+            $("#score").text(`${userScore} points`);
+        }
+        function decreaseTime(){
+        timerCountdown --;   
+        $("#timer").text(`${timerCountdown} remaining`);
+        }
 
-let userScore = 0;
-let timerCountdown = 30;
+        function addImage(){
 
-function increaseScore(){
-    userScore++;
-    $("#score").text(`${userScore} points`);
-}
-function decreaseTime(){
- timerCountdown --;   
- $("#timer").text(`${timerCountdown} remaining`);
-}
+            $("#gamespace").prepend($("<img>",{src:"img/soccerBall.png", alt:"picture of a soccer ball", class:"soccerBall"}));
+        }
 
-function addImage(){
+            function startGame(){
 
-    $("#gamespace").prepend($("<img>",{src:"img/soccerBall.png", alt:"picture of a soccer ball", class:"soccerBall"}));
-}
+                alert(randomX());
 
-function startGame(){
+                alert(randonY());
 
-    alert(randomX());
-    alert(randonY());
+                increaseScore();
 
-   // $("#timer").append("<span>30 seconds left</span>");
+                addImage();
+            
+                decreaseTime();
 
-//    $("#timer").text(`${timerCountdown} remaining`);
+        }
+        window.addEventListener('load', (event) =>{
 
-    increaseScore();
-    // $("#gamespace").prepend($("<img>",{src:"img/soccerBall.png", alt:"picture of a soccer ball", class:"soccerBall"}));
+        let pTag = document.getElementById("welcome");
 
-    addImage();
-    decreaseTime();
+        let userName = window.prompt("What is your name?");
 
-}
-window.addEventListener('load', (event) =>{
+        let message = "Hello " + userName + " welcome to this soccer game!";
 
+
+        pTag.innerHTML = message;
+        
     
 
-    let userName = window.prompt("What is your name?");
-
-    let message = "Hello " + userName + " welcome to this soccer game!";
-
-
-    let pTag = document.getElementById("welcome");
-    pTag.innerHTML = message;
-    
-    
-
-    // $("#timer").append("<span>30 seconds left</span>");
     $("#start_button").on("click",function(){
         
         startGame();
     });
+    
+    
     $("#start_button").css({
         "width" : "90px",
         "height": "50px",
@@ -69,15 +69,10 @@ window.addEventListener('load', (event) =>{
         "background-color": "#7cfc00"
     });
 
-    // increaseScore();
 
 });
 
     $(document).ready(function(){
-        // $("#gamespace").prepend($("<img>",{src:"img/soccerBall.png", alt:"picture of a soccer ball", class:"soccerBall"}));
-
-        // alert(randomX());
-        // alert(randonY());
-       
+        
         });
         
