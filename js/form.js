@@ -17,12 +17,21 @@
         
 
         function increaseScore(){
-            userScore++;
+            //userScore++;
             $("#score").text(`${userScore} points`);
         }
         function decreaseTime(){
-        timerCountdown --;   
+           
         $("#timer").text(`${timerCountdown} remaining`);
+        timerCountdown --;
+
+        if(timerCountdown < 0){
+            alert("Timer is complete");
+            clearTimeout(timeoutMethod);
+            
+        }else{
+            const timeoutMethod = setTimeout(decreaseTime, 1000);
+        }
         }
 
         function addImage(){
@@ -32,15 +41,19 @@
 
             function startGame(){
 
-                alert(randomX());
+              //  alert(randomX());
 
-                alert(randonY());
+               // alert(randonY());
+
+               
 
                 increaseScore();
 
                 addImage();
             
                 decreaseTime();
+
+               
 
         }
         window.addEventListener('load', (event) =>{
@@ -69,8 +82,11 @@
         "background-color": "#7cfc00"
     });
 
+    
+
 
 });
+
 
     $(document).ready(function(){
         
