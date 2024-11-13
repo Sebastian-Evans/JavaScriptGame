@@ -11,6 +11,8 @@ html, body, .directions {
 	background-position: center top;
 	background-size: cover;
 	background-repeat: no-repeat;
+
+
 	 }
 	
 h1 {
@@ -75,13 +77,19 @@ div#gamespace {
 	background-position: center; 
 	background-repeat: no-repeat; 
 	position: relative;
-	
+	cursor: url('../img/pointer.png'),auto;
+	display: flex;  
+	flex-wrap: wrap; 
+    
  }
+
+ 
 
 .soccerBall {
 	width: 35px;
-	position: absolute;
+	height: 35px;
 	margin: 0;
+	display: inline-block;
 }
 #welcome{
 	font-size: 20px;

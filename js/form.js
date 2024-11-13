@@ -17,40 +17,50 @@
         
 
         function increaseScore(){
-            //userScore++;
+            userScore++;
             $("#score").text(`${userScore} points`);
         }
         function decreaseTime(){
            
-        $("#timer").text(`${timerCountdown} remaining`);
-        timerCountdown --;
+        
 
-        if(timerCountdown < 0){
-            alert("Timer is complete");
-            clearTimeout(timeoutMethod);
+        if(timerCountdown >= 0){
+
+            $("#timer").text(`${timerCountdown} remaining`);
+            timerCountdown --;
+            
+            const timeoutMethod = setTimeout(decreaseTime, 1000);
             
         }else{
-            const timeoutMethod = setTimeout(decreaseTime, 1000);
+
+            alert("Timer is complete");
+            clearTimeout(timeoutMethod);
         }
         }
 
         function addImage(){
+            
+            $("#gamespace").append($("<img>",{src:"img/soccerBall.png", alt:"picture of a soccer ball", class:"soccerBall"}));
 
-            $("#gamespace").prepend($("<img>",{src:"img/soccerBall.png", alt:"picture of a soccer ball", class:"soccerBall"}));
+            if(timerCountdown > 0){
+                setTimeout(addImage, 2000);
+            }
         }
 
             function startGame(){
 
+                $("#score").text(`${userScore} points`);
               //  alert(randomX());
 
                // alert(randonY());
 
                
 
-                increaseScore();
+                //increaseScore();
 
                 addImage();
             
+              
                 decreaseTime();
 
                
@@ -89,6 +99,10 @@
 
 
     $(document).ready(function(){
-        
+        $("#gamespace").on("click", "img.soccerBall", function() {
+            increaseScore(); // Increment score when an image is clicked
+           
+        });
         });
         
+
