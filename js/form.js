@@ -2,6 +2,7 @@
         const gamespaceHeight = $("#gamespace").height();
         let userScore = 0;
         let timerCountdown = 30;
+        let x;
 
         function randomX(){
 
@@ -34,6 +35,7 @@
         }else{
 
             alert("Timer is complete");
+            clearTimeout(x);
             clearTimeout(timeoutMethod);
         }
         }
@@ -43,20 +45,13 @@
             $("#gamespace").append($("<img>",{src:"img/soccerBall.png", alt:"picture of a soccer ball", class:"soccerBall"}));
 
             if(timerCountdown > 0){
-                setTimeout(addImage, 2000);
+                x = setTimeout(addImage, 2000);
             }
         }
 
             function startGame(){
 
                 $("#score").text(`${userScore} points`);
-              //  alert(randomX());
-
-               // alert(randonY());
-
-               
-
-                //increaseScore();
 
                 addImage();
             
