@@ -7,15 +7,17 @@
         function randomX(){
 
         
-        return Math.floor(Math.random() * gamespaceWidth);
+        return Math.floor(Math.random() * (gamespaceWidth - 35));
     }
 
-        function randonY(){
+        function randomY(){
     
-            return Math.floor(Math.random() * gamespaceHeight);
+            return Math.floor(Math.random() * (gamespaceHeight - 35));
         }
 
-        
+        function randomTime(){
+            return Math.floor(Math.random() * 2000);
+        }
 
         function increaseScore(){
             userScore++;
@@ -27,6 +29,7 @@
 
         if(timerCountdown >= 0){
 
+            
             $("#timer").text(`${timerCountdown} remaining`);
             timerCountdown --;
             
@@ -42,11 +45,25 @@
 
         function addImage(){
             
-            $("#gamespace").append($("<img>",{src:"img/soccerBall.png", alt:"picture of a soccer ball", class:"soccerBall"}));
+
+            let xPos = randomX();
+            let yPos = randomY();
+
+            $("#gamespace").append($("<img>", {
+                src: "img/soccerBall.png",
+                alt: "picture of a soccer ball",
+                class: "soccerBall",
+                style: `left: ${xPos}px; top: ${yPos}px; position: absolute;` 
+            }));
 
             if(timerCountdown > 0){
-                x = setTimeout(addImage, 2000);
+                x = setTimeout(addImage, randomTime());
             }
+
+           
+      
+
+
         }
 
             function startGame(){
@@ -77,6 +94,7 @@
     $("#start_button").on("click",function(){
         
         startGame();
+        $(this).off("click");
     });
     
     
@@ -95,9 +113,12 @@
 
     $(document).ready(function(){
         $("#gamespace").on("click", "img.soccerBall", function() {
-            increaseScore(); // Increment score when an image is clicked
+            increaseScore(); 
            
+            $(this).remove();
         });
+
+        $("footer").load("load.html");
         });
         
 
